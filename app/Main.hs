@@ -5,8 +5,8 @@ main = putStrLn myhtml
   where
     myhtml = makeHtml "Hello title" "Hello, world!"
     makeHtml :: String -> (String -> String)
-    el :: String -> String -> String
-    el tag content =
+    el :: String -> (String -> String)
+    el = \tag -> \content ->
       "<" <> tag <> ">" <> content <> "</" <> tag <> ">"
     makeHtml title content =
       html_
